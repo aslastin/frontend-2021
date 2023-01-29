@@ -1,0 +1,106 @@
+html {
+  text-align: center;
+}
+
+.mycheckbox {
+  width: 50px;
+  height: 50px;
+}
+
+.mycheckbox:checked ~ .cat-card {
+  display: block;
+}
+
+.mycheckbox:checked ~ .cat-card > .cat-image {
+  width: 500px;
+  height: 300px;
+}
+
+.mycheckbox:not(:checked) ~ .cat-card > .cat-image {
+  width: 290px;
+  height: 190px;
+}
+
+.mycheckbox:checked ~ .cat-card > .cat-breed,
+.mycheckbox:checked ~ .cat-card > .cat-diseases,
+.mycheckbox:checked ~ .cat-card > .cat-status {
+  display: none;
+}
+
+.mycheckbox:not(:checked) ~ .cat-card {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mycheckbox:checked ~ .cat-card {
+  text-overflow: clip;
+  white-space: normal;
+}
+
+.mycheckbox:not(:checked) ~ .cat-card {
+  display: inline-block;
+}
+
+.mycheckbox:not(:checked) ~ .cat-card > .cat-char,
+.mycheckbox:not(:checked) ~ .cat-card > .cat-desc {
+  display: none;
+}
+
+.mycheckbox:checked ~ .cat-card {
+  height: 500px;
+  width: 900px;
+}
+
+.mycheckbox:not(:checked) ~ .cat-card {
+  height: 350px;
+  width: 300px;
+}
+
+.cat-card {
+  border: 1px double black;
+}
+
+.cat-card:hover {
+  box-shadow: 0 0 11px rgba(33, 33, 33, .2);
+}
+
+.cat-image {
+  border-radius: 10%;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.cat-name {
+  font-weight: bold;
+  font-size: x-large;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: 2px;
+  text-align: left;
+}
+
+.cat-char,
+.cat-age,
+.cat-breed,
+.cat-diseases,
+.cat-status,
+.cat-desc {
+  color: grey;
+  font-size: 20px;
+  text-align: left;
+}
+
+.cat-status,
+.cat-desc {
+  margin-top: 20px;
+}
+
+a:hover {
+  color: green;
+}
+
+.cat-breed:hover {
+  color: red;
+}

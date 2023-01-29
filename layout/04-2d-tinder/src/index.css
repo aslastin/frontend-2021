@@ -1,0 +1,430 @@
+:root {
+  --background-color: #2d2c3e;
+
+  --button-no-color: #c82647;
+  --button-super-color: #eb9532;
+  --button-yes-color: #16a085;
+
+  --button-width: 70px;
+  --button-height: 70px;
+  --button-margin-top-bottom: var(--margin-main);
+  --button-margin-left-right: 12px;
+  --button-border-radius: 30px;
+
+  --total-button-height: calc(var(--button-height) + 3 * var(--button-margin-top-bottom));
+
+  --button-dislike-margin: 60%;
+  --button-like-margin: 60%;
+
+  --margin-main: 20px;
+  --header-padding: 5px;
+  --header-padding-top: 10px;
+
+  --h1-font-size: 30px;
+  --card-font-size: 20px;
+
+  --header-size: calc(
+    var(--h1-font-size) + var(--header-padding) + var(--header-padding-top) + var(--margin-main) +
+      1px
+  );
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  z-index: -1;
+
+  display: flex;
+  flex-direction: column;
+
+  /* QQ: Если явно не указывать ширину / высоту, то ничего работать не будет.
+     Какой по умолчанию будет ширина / высота, если ничего не указывать?  */
+
+  height: 100vh;
+
+  background: var(--background-color);
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*  || Header */
+
+header {
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  margin-bottom: var(--margin-main);
+  padding: var(--header-padding);
+  padding-top: var(--header-padding-top);
+
+  border-bottom: 1px solid white;
+}
+
+h1 {
+  font-family: 'Press Start 2P', serif;
+  font-size: var(--h1-font-size);
+  text-align: center;
+}
+
+h1:first-letter {
+  color: pink;
+}
+
+/* || Main */
+
+main {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.container {
+  position: relative;
+  overflow: hidden;
+  flex-basis: 100%;
+  list-style-type: none;
+  height: calc(100% - var(--total-button-height));
+}
+
+.container:after {
+  display: none;
+  position: fixed;
+  top: var(--header-size);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--background-color);
+  z-index: 1;
+  padding-left: 20%;
+  padding-top: 200px;
+  font-size: var(--h1-font-size);
+  font-family: 'Press Start 2P', serif;
+  content: "That's all for today!";
+}
+
+.container li {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: end;
+
+  width: 80%;
+
+  margin: var(--margin-main) auto;
+
+  border: 2px solid white;
+
+  transition: left 2.5s, top 2.5s, bottom 2.5s, opacity 1s linear;
+
+  background-position: top center;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* || User-info */
+
+.container li * {
+  z-index: 1;
+}
+
+.name,
+.status,
+.more {
+  overflow: hidden;
+
+  max-width: calc(100% - 10px);
+  padding: 5px;
+
+  background: var(--background-color);
+  font-family: 'Neucha', serif;
+  font-size: var(--card-font-size);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.name::after,
+.status::after,
+.more::after {
+  display: block;
+
+  width: 0;
+  height: 2px;
+
+  transition: 300ms;
+
+  background: white;
+  content: '';
+}
+
+.name:hover::after,
+.name:active::after,
+.status:hover::after,
+.status:active::after,
+.more:hover::after,
+.more:active::after {
+  width: 100%;
+}
+
+.name:before,
+.status:before,
+.more:before {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.name:before {
+  content: 'Name: ';
+}
+
+.status:before {
+  content: 'Status: ';
+}
+
+.more:before {
+  content: 'more';
+}
+
+.more {
+  color: aqua;
+}
+
+/* Buttons */
+
+.button {
+  position: absolute;
+  bottom: 0;
+
+  display: inline-block;
+
+  overflow: hidden;
+
+  width: var(--button-width);
+  height: var(--button-height);
+  margin: var(--button-margin-top-bottom) var(--button-margin-left-right);
+  margin-bottom: calc(2 * var(--button-margin-top-bottom));
+
+  border-radius: var(--button-border-radius);
+
+  cursor: pointer;
+}
+
+.button::before,
+.button::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: var(--button-border-radius);
+
+  transition: all 0.25s ease;
+
+  content: '';
+}
+
+.button img {
+  position: relative;
+
+  padding: 10px;
+
+  transition: all 0.25s ease;
+
+  font-size: 30px;
+}
+
+.button-dislike::before,
+.button-super::before,
+.button-like::before {
+  border-radius: 0;
+}
+
+.button-dislike::after {
+  box-shadow: inset 0 0 0 2px var(--button-no-color);
+}
+
+.button-dislike::before {
+  margin-left: 100%;
+
+  box-shadow: inset 0 0 0 60px var(--button-no-color);
+}
+
+.button-dislike:hover::before {
+  margin-left: 0;
+}
+
+.button-super::after {
+  box-shadow: inset 0 0 0 2px var(--button-super-color);
+}
+
+.button-super::before {
+  margin-top: 100%;
+
+  box-shadow: inset 0 0 0 60px var(--button-super-color);
+}
+
+.button-super:hover::before {
+  margin-top: 0;
+}
+
+.button-like::after {
+  box-shadow: inset 0 0 0 2px var(--button-yes-color);
+}
+
+.button-like::before {
+  margin-left: -100%;
+
+  box-shadow: inset 0 0 0 60px var(--button-yes-color);
+}
+
+.button-like:hover::before {
+  margin-left: 0;
+}
+
+/* || Setting icons */
+
+/* QQ: В чем разница между явным img?
+   И например такой кейс: лучше сделать внутри div img, или div, у которого background-image? */
+
+.container li:nth-child(1) {
+  background-image: url('images/users/user1.png');
+}
+
+.container li:nth-child(2) {
+  background-image: url('images/users/user2.jpg');
+}
+
+.container li:nth-child(3) {
+  background-image: url('images/users/user3.webp');
+}
+
+.container li:nth-child(4) {
+  background-image: url('images/users/user4.jpg');
+}
+
+.container li:nth-child(5) {
+  background-image: url('images/users/user5.jpg');
+}
+
+.container li:nth-child(6) {
+  background-image: url('images/users/user6.jpg');
+}
+
+.container li:nth-child(7) {
+  background-image: url('images/users/user7.jpg');
+}
+
+/* || Setup initial */
+
+input {
+  display: none;
+}
+
+.button {
+  display: none;
+}
+
+.button:nth-child(2),
+.button:nth-child(4),
+.button:nth-child(6) {
+  display: inline-block;
+}
+
+.button:nth-child(6n + 2) {
+  margin-right: var(--button-dislike-margin);
+}
+
+.button:nth-child(6n + 6) {
+  margin-left: var(--button-like-margin);
+}
+
+.container li {
+  opacity: 0;
+}
+
+.container li:first-child {
+  opacity: 1;
+}
+
+#buttons-1-dislike:checked ~ .container li:first-child,
+#buttons-2-dislike:checked ~ .container li:nth-child(2),
+#buttons-3-dislike:checked ~ .container li:nth-child(3),
+#buttons-4-dislike:checked ~ .container li:nth-child(4),
+#buttons-5-dislike:checked ~ .container li:nth-child(5),
+#buttons-6-dislike:checked ~ .container li:nth-child(6),
+#buttons-7-dislike:checked ~ .container li:nth-child(7) {
+  left: -1000vw;
+}
+
+#buttons-1-super:checked ~ .container li:first-child,
+#buttons-2-super:checked ~ .container li:nth-child(2),
+#buttons-3-super:checked ~ .container li:nth-child(3),
+#buttons-4-super:checked ~ .container li:nth-child(4),
+#buttons-5-super:checked ~ .container li:nth-child(5),
+#buttons-6-super:checked ~ .container li:nth-child(6),
+#buttons-7-super:checked ~ .container li:nth-child(7) {
+  top: -1000vh;
+  bottom: auto;
+}
+
+#buttons-1-like:checked ~ .container li:first-child,
+#buttons-2-like:checked ~ .container li:nth-child(2),
+#buttons-3-like:checked ~ .container li:nth-child(3),
+#buttons-4-like:checked ~ .container li:nth-child(4),
+#buttons-5-like:checked ~ .container li:nth-child(5),
+#buttons-6-like:checked ~ .container li:nth-child(6),
+#buttons-7-like:checked ~ .container li:nth-child(7) {
+  left: 1000vw;
+}
+
+input[id^='buttons-1']:checked ~ .button[for^='buttons-2'],
+input[id^='buttons-2']:checked ~ .button[for^='buttons-3'],
+input[id^='buttons-3']:checked ~ .button[for^='buttons-4'],
+input[id^='buttons-4']:checked ~ .button[for^='buttons-5'],
+input[id^='buttons-5']:checked ~ .button[for^='buttons-6'],
+input[id^='buttons-6']:checked ~ .button[for^='buttons-7'] {
+  display: inline-block;
+}
+
+input[id^='buttons-1']:checked ~ .container li:nth-child(2),
+input[id^='buttons-2']:checked ~ .container li:nth-child(3),
+input[id^='buttons-3']:checked ~ .container li:nth-child(4),
+input[id^='buttons-4']:checked ~ .container li:nth-child(5),
+input[id^='buttons-5']:checked ~ .container li:nth-child(6),
+input[id^='buttons-6']:checked ~ .container li:nth-child(7) {
+  opacity: 1;
+}
+
+input[id^='buttons-7']:checked ~ .container:after {
+  display: inline;
+}
+
+@media not screen, not (orientation: portrait), not (max-width: 600px) {
+  body * {
+    display: none;
+  }
+
+  body:after {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40vh 30vw;
+    font-size: var(--h1-font-size);
+    font-family: 'Press Start 2P', serif;
+    content: 'Mobile only :(';
+  }
+}

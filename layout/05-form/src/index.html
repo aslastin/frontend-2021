@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+  <meta charset='utf-8'>
+  <title>Find your girl</title>
+  <meta content='width=device-width, initial-scale=1' name='viewport'>
+  <link href='./index.css' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+  <link href='images/icon.png' rel='icon' type='image/x-icon'>
+</head>
+<body>
+  <form class='form'>
+    <div class='form__main-content'>
+      <h1 class='header'>Девушка <span class='blink'>Твоей</span> Мечты</h1>
+      <p class='form__desc'>
+        Задолбался сидеть за компом и чувствуешь, что пора найти вторую половинку?
+        Тогда ты попал по адресу - мы поможем найти тебе ту самую.
+      </p>
+      <p class='form__notice'>
+        Примечание: незаполненные поля будут подбираться случайным образом!
+      </p>
+
+      <ul class='girl-info'>
+
+        <li class='girl-info__type'>
+          <p class='girl-info__field-desc'>Тип:</p>
+
+          <div class='radio-group' role='radiogroup'>
+            <input class='radio-group__input' id='girl-type1' name='girl-types' type='radio'
+                   value='type1'>
+            <label class='radio-group__girl-type' for='girl-type1'>2D</label>
+
+            <input class='radio-group__input' id='girl-type2' name='girl-types' type='radio'
+                   value='type2'>
+            <label class='radio-group__girl-type' for='girl-type2'>3D</label>
+
+            <input checked class='radio-group__input' id='girl-type3' name='girl-types' type='radio'
+                   value='type3'>
+            <label class='radio-group__girl-type' for='girl-type3'>главное - душа</label>
+          </div>
+        </li>
+
+        <li class='girl-info__params'>
+          <p class='girl-info__field-desc' title='грудь : талия : бедра'>Параметры:</p>
+          <input class='girl-info__param' min='0' name='first-param' title='грудь' type='number'>
+          <span class='delimiter'></span>
+          <input class='girl-info__param' min='0' name='second-param' title='талия' type='number'>
+          <span class='delimiter'></span>
+          <input class='girl-info__param' min='0' name='third-param' title='бедра' type='number'>
+        </li>
+
+        <li class='girl-info__name'>
+          <label class='girl-info__field-desc' for='girl-name'>Имя:</label>
+          <input id='girl-name' name='girl-name' type='text'>
+        </li>
+
+        <li class='girl-info__extra'>
+          <label class='girl-info__field-desc' for='user-message'>Дополнительно:</label>
+          <textarea id='user-message' name='user-message'></textarea>
+        </li>
+
+      </ul>
+
+      <div class='form__user-info'>
+        <input id='email' name='email' placeholder='Email (ваш)' required type='email'>
+        <div class='mail-icon'></div>
+
+        <div class='mailing'>
+          <input class='mailing__input' id='power' name='power' type='checkbox'>
+          <label class='mailing__label' for='power'>Подписаться на рассылку</label>
+        </div>
+
+        <button class='submit'><span>GO!</span></button>
+      </div>
+    </div>
+
+    <ul class='form__design-images' role='none'>
+      <li class='form__design-image_background_main'></li>
+      <li class='form__design-image_background_girl'></li>
+      <li class='form__design-image_background_main'></li>
+    </ul>
+
+    <button class='reset-button' type='reset'></button>
+  </form>
+</body>
+</html>

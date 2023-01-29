@@ -1,0 +1,342 @@
+:root {
+  --header-font-size: 4vh;
+  --footer-font-size: 2vh;
+  --main-margin: 2vh;
+  --padding: 1vh;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Open Sans', serif;
+}
+
+/* || Header */
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  padding: var(--padding);
+
+  border-bottom: 1px solid grey;
+
+  background-color: white;
+
+  font-family: 'PT Sans Narrow', serif;
+  font-size: var(--header-font-size);
+  text-align: center;
+}
+
+header::first-letter {
+  color: red;
+}
+
+/*header + * {*/
+/*  margin-top: calc(2 * (var(--header-font-size) + var(--padding)));*/
+/*}*/
+
+/* || Footer */
+
+footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: space-between;
+
+  padding: var(--padding) calc(2 * var(--padding));
+
+  border-top: 1px solid grey;
+
+  background-color: white;
+
+  font-size: var(--footer-font-size);
+}
+
+footer > ul {
+  color: grey;
+  list-style-type: none;
+}
+
+footer > ul > li {
+  padding-right: var(--footer-font-size);
+}
+
+/* || Main */
+
+/* TODO: добавить main-bottom-margin*/
+
+main {
+  display: flex;
+
+  margin-top: calc(var(--header-font-size) + 2 * var(--padding) + var(--main-margin));
+  margin-bottom: 100px;
+}
+
+ul.cat-cards {
+  display: grid;
+  overflow: hidden;
+
+  width: 80%;
+  margin: 0;
+  padding: var(--padding);
+
+  gap: calc(2 * var(--padding));
+  list-style: none;
+}
+
+ul.cat-cards li {
+  --li-height: calc(height);
+  float: left;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: auto;
+  min-height: auto;
+  margin: 0;
+
+  border: 1px solid gray;
+
+  color: grey;
+}
+
+.up {
+  display: flex;
+
+  margin-bottom: calc(2 * var(--padding));
+  padding-top: var(--padding);
+  padding-right: var(--padding);
+  padding-left: var(--padding);
+}
+
+.up .left {
+  flex: 1;
+}
+
+.cat-image {
+  width: 100%;
+  min-width: 50px;
+  height: 100%;
+  min-height: 10px;
+}
+
+.up .right {
+  flex: 1;
+}
+
+.up .right > * {
+  padding-left: calc(2 * var(--padding));
+}
+
+.cat-name {
+  margin-bottom: var(--padding);
+
+  color: black;
+  font-size: var(--header-font-size);
+  font-weight: bold;
+}
+
+.cat-age::before {
+  content: 'Возраст: ';
+}
+
+.cat-breed::before {
+  content: 'Порода: ';
+}
+
+.cat-diseases::before {
+  content: 'Болезни: ';
+}
+
+.cat-status::before {
+  content: 'Статус: ';
+}
+
+.cat-status,
+.cat-note {
+  margin-top: var(--padding);
+}
+
+.down {
+  padding: var(--padding);
+
+  border-top: 1px solid grey;
+}
+
+.short-info {
+  padding-top: var(--padding);
+}
+
+.long-info {
+  margin-top: var(--padding);
+}
+
+aside {
+  width: 20%;
+}
+
+.age {
+  font-size: var(--header-font-size);
+  font-weight: bold;
+}
+
+.slidecontainer {
+  width: 80%;
+  margin-bottom: var(--padding);
+
+  text-align: center;
+}
+
+.slider {
+  width: 100%;
+  height: 25px;
+
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+
+  -webkit-appearance: none;
+  appearance: none;
+  background: #d3d3d3;
+  opacity: 0.7;
+  outline: none;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+
+  background: #045faa;
+  cursor: pointer;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+}
+
+div.options > label > input {
+  visibility: hidden;
+}
+
+div.options > label {
+  display: block;
+
+  width: 150px;
+  height: 20px;
+  margin: 0 0 0 -10px;
+  padding: 0 0 20px 0;
+}
+
+div.options > label > img {
+  display: inline-block;
+
+  width: 30px;
+  height: 30px;
+  padding: 0px;
+
+  background: none;
+}
+
+div.options > label > input:checked + img {
+  background: url(http://cdn1.iconfinder.com/data/icons/onebit/PNG/onebit_34.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+}
+
+/* || MEDIA */
+
+/* Phone */
+
+@media (max-width: 729px) {
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Tablet */
+
+@media (min-width: 730px) and (max-width: 1199px) {
+  footer {
+    align-items: flex-end;
+  }
+}
+
+/* Phone and Tablet */
+
+@media (max-width: 1199px) {
+  ul.cat-cards {
+    grid-template-columns: repeat(1, 1fr);
+
+    width: 100%;
+  }
+
+  .down {
+    display: none;
+  }
+
+  footer > ul > li:not(:first-child) {
+    padding-left: calc(2 * var(--footer-font-size));
+
+    background-image: url(images/letter.png);
+    background-position-y: calc(0.2 * var(--footer-font-size));
+    background-repeat: no-repeat;
+    background-size: calc(1.6 * var(--footer-font-size)) var(--footer-font-size);
+  }
+
+  footer > span {
+    margin-top: 2vh;
+  }
+
+  aside {
+    display: none;
+  }
+}
+
+/* Desktop */
+
+@media (min-width: 1200px) {
+  main {
+    margin-bottom: calc(var(--footer-font-size) + 2 * var(--padding) + var(--main-margin));
+  }
+
+  ul.cat-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  footer {
+    align-items: center;
+  }
+
+  footer > ul {
+    display: flex;
+  }
+
+  footer > ul > li:first-child {
+    padding-left: calc(2 * var(--footer-font-size));
+
+    background-image: url(images/letter.png);
+    background-position-y: calc(0.2 * var(--footer-font-size));
+    background-repeat: no-repeat;
+    background-size: calc(1.6 * var(--footer-font-size)) var(--footer-font-size);
+  }
+
+  footer > ul > li:nth-child(2n + 3) {
+    padding-left: 1rem;
+
+    list-style-type: disc;
+  }
+}

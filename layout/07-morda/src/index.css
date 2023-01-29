@@ -1,0 +1,761 @@
+:root {
+  --font-size-l1: 10px;
+  --font-size-l2: 12px;
+  --font-size-l3: 14px;
+  --font-size-l4: 16px;
+
+  --color-red: #ff0000;
+  --color-yellow: #ffdb4d;
+  --color-blue: #6daae8;
+  --color-dark-blue: #0054b9;
+  --color-dark: #000000;
+  --color-grey: rgba(0, 0, 0, 0.5);
+
+  --sections-element-margin: 5px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* || Site settings */
+
+.site {
+  display: grid;
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  grid-template-areas:
+    'city   .                    settings             user-info'
+    '.      content-above-search content-above-search user-info'
+    'logo   search-links         .                    user-info'
+    'logo   search-input         search-button        user-info'
+    '.      search-example       .                    user-info'
+    '.      ad                   .                    user-info'
+    '.      sections             sections             user-info';
+
+  grid-template-columns: 200px auto 100px 200px;
+  grid-template-rows: 50px 200px 20px 40px 20px 100px auto;
+
+  width: 100vw;
+
+  min-height: 100vh;
+
+  background-color: white;
+  color: black;
+  font-family: 'Arial', serif;
+  font-size: var(--font-size-l3);
+}
+
+.site_link-color_dark-blue a[href],
+a[href].site_link-color_dark-blue,
+.site_link-color_dark-blue a[href]:link,
+a[href]:link.site_link-color_dark-blue,
+.site_link-color_dark-blue a[href]:visited,
+a[href]:visited.site_link-color_dark-blue {
+  color: var(--color-dark-blue);
+}
+
+.site_link-color_blue a[href],
+a[href].site_link-color_blue,
+.site_link-color_blue a[href]:link,
+a[href]:link.site_link-color_blue,
+.site_link-color_blue a[href]:visited,
+a[href]:visited.site_link-color_blue {
+  color: var(--color-blue);
+}
+
+.site_link-color_grey a[href],
+a[href].site_link-color_grey,
+.site_link-color_grey a[href]:link,
+a[href]:link.site_link-color_grey,
+.site_link-color_grey a[href]:visited,
+a[href]:visited.site_link-color_grey {
+  color: var(--color-grey);
+}
+
+.site_link a[href]:hover,
+a[href]:hover.site_link {
+  color: var(--color-red);
+}
+
+.site_link a[href],
+a[href].site_link {
+  text-decoration: none;
+}
+
+.site_link a:visited,
+a:visited.site_link {
+  color: inherit;
+}
+
+.site_link a:link,
+a.site_link:link {
+  color: inherit;
+}
+
+.site_translucent {
+  opacity: 0.5;
+}
+
+.site_font_bold {
+  font-weight: bold;
+}
+
+.site_first-letter_red:first-letter {
+  color: var(--color-red);
+}
+
+.site_font-color_grey {
+  color: var(--color-grey);
+}
+
+.site_font-size_l1 {
+  font-size: var(--font-size-l1);
+}
+
+.site_font-size_l2 {
+  font-size: var(--font-size-l2);
+}
+
+.site_font-size_l3 {
+  font-size: var(--font-size-l3);
+}
+
+.site_font-size_l4 {
+  font-size: var(--font-size-l4);
+}
+
+/* || City */
+
+.city {
+  grid-area: city;
+  justify-self: start;
+  padding: 15px 10px;
+  position: relative;
+}
+
+.city__name {
+  padding-left: 30px;
+}
+
+.city__name:before {
+  position: absolute;
+  top: 17px;
+  left: 20px;
+
+  width: 15px;
+  height: 15px;
+
+  background-image: url('images/navigator.png');
+  background-size: contain;
+  content: '';
+}
+
+/* || Settings */
+
+#input-settings {
+  display: none;
+}
+
+.label-settings {
+  grid-area: settings;
+  justify-self: end;
+  padding: 15px 15px;
+  cursor: pointer;
+}
+
+.label-settings:hover:first-letter {
+  color: red;
+}
+
+.label-settings:hover {
+  opacity: 0.8;
+}
+
+#input-settings:checked ~ .settings {
+  display: block;
+}
+
+input[name='checkbox-settings'] {
+  display: none;
+}
+
+.settings {
+  position: relative;
+  width: 200px;
+  height: 230px;
+  background-color: white;
+  top: 45px;
+  left: calc(100% - 50px);
+  z-index: 1;
+  display: none;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.settings__arrow {
+  position: absolute;
+  z-index: -1;
+  width: 70px;
+  height: 70px;
+
+  left: 60px;
+  top: 5px;
+  transform: rotateY(0deg) rotate(45deg);
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.settings__options {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.settings__options > label {
+  margin: 5px 5px;
+}
+
+.settings__options > label:first-of-type {
+  margin-top: 10px;
+}
+
+.settings__options > label:last-of-type {
+  margin-top: 10px;
+}
+
+.control {
+  position: relative;
+  display: inline-block;
+  padding-left: 1.5rem;
+  color: #555;
+  cursor: pointer;
+}
+
+.control-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  line-height: 1rem;
+  font-size: 65%;
+  color: #eee;
+  text-align: center;
+  background-color: #eee;
+  background-size: 50% 50%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Focus */
+#checkbox-visited:focus ~ .settings label[for='checkbox-visited'] > .control-indicator,
+#checkbox-best-jokes:focus ~ .settings label[for='checkbox-best-jokes'] > .control-indicator,
+#checkbox-tv-program:focus ~ .settings label[for='checkbox-tv-program'] > .control-indicator,
+#checkbox-car-news:focus ~ .settings label[for='checkbox-car-news'] > .control-indicator,
+#checkbox-weather:focus ~ .settings label[for='checkbox-weather'] > .control-indicator,
+#checkbox-traffic-jams:focus ~ .settings label[for='checkbox-traffic-jams'] > .control-indicator,
+#checkbox-map:focus ~ .settings label[for='checkbox-map'] > .control-indicator,
+#checkbox-poster:focus ~ .settings label[for='checkbox-poster'] > .control-indicator {
+  box-shadow: 0 0 0 0.075rem #fff, 0 0 0 0.2rem #0074d9;
+}
+
+/* Checked state */
+#checkbox-visited:checked ~ .settings label[for='checkbox-visited'] > .control-indicator,
+#checkbox-best-jokes:checked ~ .settings label[for='checkbox-best-jokes'] > .control-indicator,
+#checkbox-tv-program:checked ~ .settings label[for='checkbox-tv-program'] > .control-indicator,
+#checkbox-car-news:checked ~ .settings label[for='checkbox-car-news'] > .control-indicator,
+#checkbox-weather:checked ~ .settings label[for='checkbox-weather'] > .control-indicator,
+#checkbox-traffic-jams:checked ~ .settings label[for='checkbox-traffic-jams'] > .control-indicator,
+#checkbox-map:checked ~ .settings label[for='checkbox-map'] > .control-indicator,
+#checkbox-poster:checked ~ .settings label[for='checkbox-poster'] > .control-indicator {
+  color: #fff;
+  background-color: #0074d9;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTYuNCwxTDUuNywxLjdMMi45LDQuNUwyLjEsMy43TDEuNCwzTDAsNC40bDAuNywwLjdsMS41LDEuNWwwLjcsMC43bDAuNy0wLjdsMy41LTMuNWwwLjctMC43TDYuNCwxTDYuNCwxeiINCgkvPg0KPC9zdmc+DQo=);
+}
+
+/* Active */
+#checkbox-visited:active ~ .settings label[for='checkbox-visited'] > .control-indicator,
+#checkbox-best-jokes:active ~ .settings label[for='checkbox-best-jokes'] > .control-indicator,
+#checkbox-tv-program:active ~ .settings label[for='checkbox-tv-program'] > .control-indicator,
+#checkbox-car-news:active ~ .settings label[for='checkbox-car-news'] > .control-indicator,
+#checkbox-weather:active ~ .settings label[for='checkbox-weather'] > .control-indicator,
+#checkbox-traffic-jams:active ~ .settings label[for='checkbox-traffic-jams'] > .control-indicator,
+#checkbox-map:active ~ .settings label[for='checkbox-map'] > .control-indicator,
+#checkbox-poster:active ~ .settings label[for='checkbox-poster'] > .control-indicator {
+  color: #fff;
+  background-color: #84c6ff;
+}
+
+/* Checkbox modifiers */
+.checkbox .control-indicator {
+  border-radius: 0.25rem;
+}
+
+#checkbox-visited:not(:checked) ~ .sections > .sections__column:nth-of-type(1) .visited,
+#checkbox-best-jokes:not(:checked) ~ .sections > .sections__column:nth-of-type(1) .best-jokes,
+#checkbox-tv-program:not(:checked) ~ .sections > .sections__column:nth-of-type(2) .tv-program,
+#checkbox-car-news:not(:checked) ~ .sections > .sections__column:nth-of-type(2) .car-news,
+#checkbox-weather:not(:checked) ~ .sections > .sections__column:nth-of-type(3) .weather,
+#checkbox-traffic-jams:not(:checked) ~ .sections > .sections__column:nth-of-type(3) .traffic-jams,
+#checkbox-map:not(:checked) ~ .sections > .sections__column:nth-of-type(3) .map,
+#checkbox-poster:not(:checked) ~ .sections > .sections__column:nth-of-type(3) .poster {
+  display: none;
+}
+
+#checkbox-visited:not(:checked) ~ #checkbox-best-jokes:not(:checked) ~ .sections > .sections__column:nth-of-type(1),
+#checkbox-tv-program:not(:checked) ~ #checkbox-car-news:not(:checked) ~ .sections > .sections__column:nth-of-type(2),
+#checkbox-weather:not(:checked) ~ #checkbox-traffic-jams:not(:checked) ~ #checkbox-map:not(:checked) ~ #checkbox-poster:not(:checked) ~ .sections > .sections__column:nth-of-type(3)
+{
+  display: none;
+}
+
+/* || User-info */
+
+.user-info {
+  align-self: start;
+  grid-area: user-info;
+
+  margin: 5px 10px;
+  padding: 10px;
+
+  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 3px;
+}
+
+.user-info *:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.user-info__mail-cnt {
+  margin-left: 5px;
+}
+
+.content-above-search {
+  display: flex;
+  justify-content: space-between;
+  grid-area: content-above-search;
+
+  margin-top: 20px;
+
+  font-size: 12px;
+}
+
+.media__header {
+  display: flex;
+}
+
+.media__header > * {
+  margin-right: 10px;
+}
+
+.media__date {
+  line-height: 23px;
+}
+
+.media__news > li {
+  margin-top: 5px;
+}
+
+.media__currency {
+  display: flex;
+
+  margin-top: 10px;
+
+  list-style: none;
+}
+
+.media__currency > li {
+  margin-right: 10px;
+}
+
+.media__currency > li > * {
+  margin-right: 2px;
+}
+
+/* || Ad for studtens */
+
+.ad-students {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  margin: 0 30px;
+}
+
+.ad-students__image {
+  width: 100px;
+  height: 70px;
+}
+
+.ad-students__age-limit {
+  position: absolute;
+  top: 0;
+  left: 100px;
+}
+
+.ad-students__title {
+  width: 130px;
+  margin: 10px 0;
+}
+
+/* || Search links */
+
+.search-links {
+  display: flex;
+  grid-area: search-links;
+
+  list-style: none;
+}
+
+.search-links > li {
+  margin-right: 20px;
+}
+
+/* || Search-field */
+
+input#search {
+  display: none;
+}
+
+.search-field {
+  position: relative;
+
+  grid-area: search-input;
+
+  border: 2px solid #ffcc00;
+}
+
+.search-field__input {
+  width: 87%;
+  height: 100%;
+  padding: 0px 5px;
+
+  border: 0px;
+}
+
+.search-field__input:focus {
+  outline: none;
+}
+
+.search-field__mirco,
+.search-field__keyboard {
+  position: absolute;
+  top: 5px;
+  right: 40px;
+  cursor: pointer;
+
+  width: 25px;
+  height: 25px;
+
+  border-width: 0px;
+
+  background: no-repeat 50% 50%
+    url('https://yastatic.net/s3/home-static/_/h/H/Z5a86M6CqJTSA1DUeUxedyyKc.svg');
+  background-size: contain;
+  opacity: 0.3;
+}
+
+.search-field__mirco:hover,
+.search-field__keyboard:hover {
+  opacity: 0.5;
+}
+
+.search-field__keyboard {
+  right: 10px;
+
+  width: 30px;
+
+  background: no-repeat 50% 50%
+    url('https://yastatic.net/s3/home-static/_/m/v/paOiXiP32EAAMLDGH6mV1eD3U.svg');
+  background-size: cover;
+}
+
+/* || Search button */
+
+.search-button {
+  grid-area: search-button;
+}
+
+.search-button__find {
+  width: 90px;
+  height: 100%;
+  padding: 0 20px 0 15px;
+
+  border-width: 0;
+  cursor: pointer;
+  background: no-repeat 50% 50% url('images/button.png');
+  background-size: cover;
+}
+
+.search-button__find:active {
+  color: var(--color-red);
+}
+
+/* || Search example */
+
+.search-example {
+  grid-area: search-example;
+}
+
+/* || Search logo */
+
+.search-logo {
+  align-self: end;
+  justify-self: end;
+  grid-area: logo;
+
+  margin-right: 20px;
+  padding-top: 5px;
+
+  font-family: 'PT Sans Narrow', serif;
+  font-size: 45px;
+  line-height: 30px;
+}
+
+/* || Advertising */
+
+.advertising {
+  display: flex;
+  grid-area: ad;
+
+  cursor: pointer;
+  margin-top: 15px;
+  margin-bottom: 10px;
+
+  border: 2px solid black;
+
+  background-color: #197950;
+}
+
+.advertising__image {
+  width: 556px;
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.advertising__image:hover {
+  opacity: 0.8;
+}
+
+/* || Sections */
+
+.sections {
+  display: flex;
+  grid-area: sections;
+}
+
+.sections__column {
+  display: flex;
+  flex-direction: column;
+
+  width: 200px;
+}
+
+.sections__column:not(:last-child) {
+  margin-right: calc((100% - 600px) / 2);
+}
+
+.topic {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.topic__title {
+  display: block;
+
+  margin-bottom: 5px;
+}
+
+.topic:last-child {
+  margin-bottom: 20px;
+}
+
+.sections__list {
+  list-style: none;
+}
+
+.sections__list > li:not(:last-child) {
+  margin-bottom: var(--sections-element-margin);
+}
+
+input[name='show-more'] {
+  display: none;
+}
+
+.jokes > li {
+  display: none;
+}
+
+.jokes__content {
+  margin-bottom: 30px;
+}
+
+.show-more-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.show-more-wrapper:hover {
+  opacity: 0.7;
+}
+
+.show-more {
+  padding-left: 20px;
+
+  border-width: 0;
+
+  background: transparent;
+  color: var(--color-dark-blue);
+}
+
+.show-more:before {
+  position: absolute;
+  top: 2px;
+  left: 5px;
+
+  width: 12px;
+  height: 12px;
+
+  background: no-repeat 50% 50% url('images/reload.png');
+  background-size: contain;
+  content: '';
+}
+
+#show-more-5:checked ~ .jokes > li:first-child,
+#show-more-1:checked ~ .jokes > li:nth-child(2),
+#show-more-2:checked ~ .jokes > li:nth-child(3),
+#show-more-3:checked ~ .jokes > li:nth-child(4),
+#show-more-4:checked ~ .jokes > li:nth-child(5) {
+  display: block;
+}
+
+.tv-online:after {
+  position: absolute;
+  top: -1px;
+  left: 130px;
+
+  width: 70px;
+  height: 25px;
+
+  background: no-repeat 50% 50% url('images/tv-online.png');
+  background-size: contain;
+  content: '';
+}
+
+.tv-program__time,
+.tv-program__title {
+  margin-right: 3px;
+}
+
+.car-news__list {
+  position: relative;
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  height: 200px;
+  margin-top: 10px;
+
+  list-style: none;
+}
+
+.car-news__list > li:first-child {
+  margin-top: 10px;
+}
+
+.car-news__list > li:last-child {
+  margin-bottom: 10px;
+}
+
+.shadows {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 210px;
+}
+
+.shadows__up,
+.shadows__down {
+  z-index: 1;
+
+  width: 100%;
+  height: 20px;
+
+  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 100%);
+}
+
+.shadows__down {
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 100%);
+}
+
+.triple-header {
+  display: flex;
+
+  height: 25px;
+}
+
+.weather-img,
+.stoplight-img {
+  position: relative;
+  top: -10px;
+
+  width: 38px;
+  height: 30px;
+  margin: 0 10px;
+}
+
+.stoplight-img {
+  top: -2px;
+
+  width: 20px;
+  height: 20px;
+}
+
+.map__list {
+  display: flex;
+  flex-wrap: wrap;
+
+  list-style: none;
+}
+
+.map__list > li {
+  margin-right: 10px;
+  margin-bottom: var(--sections-element-margin);
+}
+
+.poster__info {
+  margin-left: 5px;
+}
+
+@media (min-width: 1310px) {
+  :root {
+    --sections-element-margin: 10px;
+  }
+
+  .sections__column {
+    display: flex;
+    flex-direction: column;
+
+    width: 270px;
+  }
+
+  .sections__column:not(:last-child) {
+    margin-right: calc((100% - 810px) / 2);
+  }
+}

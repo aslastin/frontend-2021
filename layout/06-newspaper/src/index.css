@@ -1,0 +1,406 @@
+:root {
+  --light-background-color: white;
+  --light-color: black;
+
+  --dark-background-color: black;
+  --dark-color: white;
+
+  --h1-font-size: 40px;
+
+  --header-padding: 5px;
+  --header-border-size: 15px;
+
+  --h2-font-size: 30px;
+
+  --main-margin-top: 10px;
+  --main-border-size: 5px;
+  --main-border-style: solid;
+
+  --section-padding: 3px;
+
+  --font-size-small: 10px;
+  --font-size-medium: 15px;
+  --font-size-large: 20px;
+}
+
+/* cyrillic */
+@font-face {
+  font-family: 'Comforter Brush';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/comforterbrush/v1/Y4GTYa1xVSggrfzZI5WMjxRaOz0Tw7j8bBwIYbNf.woff2) format('woff2');
+}
+
+/* latin */
+@font-face {
+  font-family: 'Comforter Brush';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/comforterbrush/v1/Y4GTYa1xVSggrfzZI5WMjxRaOz0Tx7j8bBwIYQ.woff2) format('woff2');
+}
+
+/* cyrillic */
+@font-face {
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lobster/v23/neILzCirqoswsqX9zoamM4MwWJXNqA.woff2) format('woff2');
+}
+
+/* latin */
+@font-face {
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lobster/v23/neILzCirqoswsqX9zoKmM4MwWJU.woff2) format('woff2');
+}
+
+/* cyrillic */
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/pacifico/v17/FwZY7-Qmy14u9lezJ-6D6MmBp0u-zK4.woff2) format('woff2');
+}
+
+/* latin */
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/pacifico/v17/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2) format('woff2');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  z-index: 1000;
+
+  padding: var(--header-padding);
+
+  border-bottom: var(--header-border-size) double var(--light-color);
+
+  background: var(--light-background-color);
+  color: var(--light-color);
+}
+
+main {
+  margin-top: calc(
+    var(--h1-font-size) + 2 * var(--header-padding) + var(--header-border-size) +
+    var(--main-margin-top)
+  );
+  overflow-x: scroll;
+
+  min-height: 100vh;
+
+  background-color: var(--light-background-color);
+  color: var(--light-color);
+}
+
+.h1 {
+  font-size: var(--h1-font-size);
+  text-align: left;
+  font-family: 'Comforter Brush', serif;
+}
+
+.h2 {
+  font-family: 'Lobster', monospace;
+  font-size: var(--h2-font-size);
+  text-align: center;
+}
+
+.h2.vertical {
+  font-family: 'Pacifico', fantasy;
+  position: absolute;
+  top: -20px;
+  left: -40px;
+}
+
+.vertical {
+  white-space: pre;
+}
+
+.top,
+.bottom {
+  display: flex;
+
+  width: 100%;
+}
+
+.top {
+  border-bottom: var(--main-border-size) var(--main-border-style) var(--light-color);
+}
+
+.top > *,
+.bottom > * {
+  width: 33%;
+  border-right: var(--main-border-size) var(--main-border-style) var(--light-color);
+}
+
+.top > *:last-child,
+.bottom > *:last-child {
+  border-right-width: 0;
+}
+
+.bottom > .section:first-child {
+  width: 60%;
+}
+
+.bottom > .section:last-child {
+  width: 40%;
+}
+
+.section {
+  position: relative;
+
+  display: flex;
+  overflow-x: hidden;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  padding: var(--section-padding);
+}
+
+.section > * {
+  margin-bottom: 5px;
+}
+
+.section > *:first-child {
+  margin-top: 3px;
+}
+
+.section > *:last-child {
+  margin-bottom: 3px;
+}
+
+.img-student {
+  width: 300px;
+  height: 300px;
+  border: 1px solid var(--light-color);
+}
+
+.img-sport {
+  align-self: end;
+  margin-right: 20px;
+  width: 60%;
+  border: 1px solid var(--light-color);
+}
+
+.p {
+  padding: var(--section-padding);
+  hyphens: auto;
+}
+
+.column-2,
+.column-4 {
+  column-rule: 2px solid var(--light-color);
+}
+
+.column-2 {
+  column-count: 2;
+}
+
+.column-4 {
+  column-count: 4;
+}
+
+.quote {
+  position: relative;
+
+  margin-left: 1em;
+  padding-left: 1em;
+
+  border-left: 0.2em solid var(--light-color);
+
+  font-family: 'Lobster', serif;
+  line-height: 1.5em;
+  text-align: justify;
+}
+
+.quote:before,
+.quote:after {
+  color: var(--light-color);
+  content: '\201C';
+}
+
+.quote:after {
+  content: '\201D';
+}
+
+.p.dropcap:first-letter,
+.p.dropcap-revert:first-letter {
+  float: left;
+
+  margin: 0.1em 0.1em 0.2em 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 6rem;
+  line-height: 0.65;
+}
+
+.p.dropcap-revert:first-letter {
+  padding: 5px 0;
+
+  background: var(--light-color);
+  color: var(--light-background-color);
+}
+
+.input,
+.label {
+  position: fixed;
+  z-index: 2000;
+  font-family: "Times New Roman", serif;
+}
+
+.input[id$='1'] {
+  left: 275px;
+}
+
+.label[for$='1'] {
+  left: 295px;
+}
+
+.input[id$='2'] {
+  left: 340px;
+}
+
+.label[for$='2'] {
+  left: 360px;
+}
+
+.input[id$='3'] {
+  left: 490px;
+}
+
+.label[for$='3'] {
+  left: 510px;
+}
+
+.label[for='font-style-1']:before,
+.label[for='font-size-1']:before {
+  position: fixed;
+  top: var(--header-padding);
+  left: 220px;
+
+  padding-left: 5px;
+
+  border-left: 1px solid var(--light-color);
+
+  content: 'style: ';
+  font-weight: bold;
+}
+
+.label[for='font-size-1']:before {
+  top: 30px;
+
+  content: 'size: ';
+}
+
+.input[id^='font-style'],
+.label[for^='font-style'] {
+  top: var(--header-padding);
+}
+
+.input[id^='font-size'],
+.label[for^='font-size'] {
+  top: 30px;
+}
+
+.input#theme {
+  display: none;
+}
+
+.label[for='theme'] {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+
+  width: 30px;
+  height: 30px;
+
+  border: 2px solid var(--light-color);
+
+  background-image: url('images/theme-light.svg');
+  background-size: contain;
+}
+
+.label[for='theme']:hover {
+  opacity: 0.5;
+}
+
+.input[name='font-style'][value='Arial']:checked ~ header,
+.input[name='font-style'][value='Arial']:checked ~ main {
+  font-family: Arial, serif;
+}
+
+.input[name='font-style'][value='Times New Roman']:checked ~ header,
+.input[name='font-style'][value='Times New Roman']:checked ~ main {
+  font-family: "Times New Roman", serif;
+}
+
+.input[name='font-style'][value='Courier New']:checked ~ header,
+.input[name='font-style'][value='Courier New']:checked ~ main {
+  font-family: "Courier New", serif;
+}
+
+.input[name='font-size'][value='small']:checked ~ header,
+.input[name='font-size'][value='small']:checked ~ main {
+  font-size: var(--font-size-small);
+}
+
+.input[name='font-size'][value='medium']:checked ~ header,
+.input[name='font-size'][value='medium']:checked ~ main {
+  font-size: var(--font-size-medium);
+}
+
+.input[name='font-size'][value='large']:checked ~ header,
+.input[name='font-size'][value='large']:checked ~ main {
+  font-size: var(--font-size-large);
+}
+
+#theme:checked ~ *,
+#theme:checked ~ *,
+#theme:checked ~ * *,
+#theme:checked ~ * * {
+  background-color: var(--dark-background-color);
+  color: var(--dark-color);
+  border-color: var(--dark-color);
+}
+
+#theme:checked ~ * .p.dropcap-revert:first-letter {
+  background: var(--dark-color);
+  color: var(--dark-background-color);
+}
+
+#theme:checked ~ .label[for='theme'] {
+  background-image: url('images/theme-dark.svg');
+}
+
+#theme:checked ~ * * {
+  column-rule-color: var(--dark-color);
+}
+
+#theme:checked ~ main .quote:before,
+#theme:checked ~ main .quote:after {
+  color: var(--dark-color)
+}
+
+#theme:checked ~ .label[for='font-style-1']:before,
+#theme:checked ~ .label[for='font-size-1']:before {
+  border-color: var(--dark-color);
+}

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Яндекс.Браузер</title>
+  <link href="./index.css" rel="stylesheet">
+  <link href='images/fevicon.png' rel='icon' type='image/x-icon'>
+</head>
+<body>
+
+  <div class="site">
+
+    <div class="city site_translucent">
+      <div class="city__name">Екатеринбург</div>
+    </div>
+
+    <input id="input-settings" name="input-settings" type="checkbox">
+    <label class="label-settings" for="input-settings">Настройка</label>
+
+    <input checked id="checkbox-visited" name="checkbox-settings" type="checkbox">
+    <input checked id="checkbox-best-jokes" name="checkbox-settings" type="checkbox">
+    <input checked id="checkbox-tv-program" name="checkbox-settings" type="checkbox">
+    <input checked id="checkbox-car-news" name="checkbox-settings" type="checkbox">
+    <input checked id="checkbox-weather" name="checkbox-settings" type="checkbox">
+    <input checked id="checkbox-traffic-jams" name="checkbox-settings" type="checkbox">
+    <input checked id="checkbox-map" name="checkbox-settings" type="checkbox">
+    <input checked id="checkbox-poster" name="checkbox-settings" type="checkbox">
+
+    <section class="settings">
+      <div class="settings__arrow"></div>
+      <div class="settings__options">
+        <label class="control checkbox" for="checkbox-visited">
+          <span class="control-indicator"></span>Посещаемое
+        </label>
+        <label class="control checkbox" for="checkbox-best-jokes">
+          <span class="control-indicator"></span>Лучшие анекдоты
+        </label>
+        <label class="control checkbox" for="checkbox-tv-program">
+          <span class="control-indicator"></span>Телепрограмма
+        </label>
+        <label class="control checkbox" for="checkbox-car-news">
+          <span class="control-indicator"></span>Автомобильные новости
+        </label>
+        <label class="control checkbox" for="checkbox-weather">
+          <span class="control-indicator"></span>Погода
+        </label>
+        <label class="control checkbox" for="checkbox-traffic-jams">
+          <span class="control-indicator"></span>Пробки
+        </label>
+        <label class="control checkbox" for="checkbox-map">
+          <span class="control-indicator"></span>Карта Екатиренбурга
+        </label>
+        <label class="control checkbox" for="checkbox-poster">
+          <span class="control-indicator"></span>Афиша
+        </label>
+      </div>
+    </section>
+
+    <section class="user-info">
+      <div class="user-info__login site_font_bold site_first-letter_red">login</div>
+      <div class="user-info__mail">
+        Почта<span class="user-info__mail-cnt site_font_bold">138</span>
+      </div>
+    </section>
+
+    <section class="content-above-search">
+      <article class="media site_link site_link-color_dark-blue ">
+        <div class="media__header">
+          <a class="media__current site_font-size_l4" href="#">Сейчас в СМИ</a>
+          <a class="media__location site_link-color_blue site_font-size_l4" href="#">
+            в Екатеринбурге
+          </a>
+          <span class="media__date site_font-color_grey site_font-size_l1">
+            13 ноября, понедельник 16:57
+          </span>
+        </div>
+
+        <ul class="media__news">
+          <li>В Кремле ответили на слова экс-главы ЦРУ о "запутанном" Путиным Трампе</li>
+          <li>Число жертв замлетрясения в Иране и Ираке правысило 350 человек</li>
+          <li>Вероятной целью проникновения в РФ ураинского дрона назвали шпионаж</li>
+          <li>Кремль рассказал о местонахождении не явившегося в суд Сечина</li>
+          <li>Кремль прокомментрировал перенос послания Путина Федеральному собранию</li>
+        </ul>
+
+        <ul class="media__currency">
+          <li>
+            <span class="media__currency-name site_font_bold">USD ЦБ</span>
+            <span class="media__currency-value">59,18</span>
+            <span class="media__currency-shift site_font-color_grey">-0,10</span>
+          </li>
+          <li>
+            <span class="media__currency-name site_font_bold">EUR ЦБ</span>
+            <span class="media__currency-value">68,92</span>
+            <span class="media__currency-shift site_font-color_grey">-0,06</span>
+          </li>
+          <li>
+            <span class="media__currency-name site_font_bold">НЕФТЬ</span>
+            <span class="media__currency-value">63,44</span>
+            <span class="media__currency-shift site_font-color_grey">-0,27%</span>
+          </li>
+        </ul>
+      </article>
+
+      <article class="ad-students">
+        <img alt="32gb" class="ad-students__image" src="images/32gb.png">
+        <a class="ad-students__age-limit site_link site_link-color_blue site_font-size_l1" href="#">18+</a>
+        <div class="ad-students__end-date site_font-size_l1 site_font-color_grey">Акция до
+          1.12.2017
+        </div>
+        <a class="ad-students__title site_link site_link-color_dark-blue site_font-size_l4"
+           href="#">32 ГБ
+          студентам на Яндекс.Диске</a>
+        <span class="ad-students__extra">Бесплатно и навсегда</span>
+      </article>
+    </section>
+
+    <ul class="search-links site_link site_link-color_dark-blue">
+      <li><a href="#">Видео</a></li>
+      <li><a href="#">Картинки</a></li>
+      <li><a href="#">Новости</a></li>
+      <li><a href="#">Карты</a></li>
+      <li><a href="#">Маркет</a></li>
+      <li><a href="#">Переводчик</a></li>
+      <li><a href="#">Музыка</a></li>
+      <li><a href="#">еще</a></li>
+    </ul>
+
+    <div class="search-field">
+      <input class="search-field__input site_font-size_l4" name="search-input">
+      <button class="search-field__mirco"></button>
+      <button class="search-field__keyboard"></button>
+    </div>
+
+    <div class="search-button">
+      <button class="search-button__find site_font-size_l4">Найти</button>
+    </div>
+
+    <div class="search-example">
+      Найдется все. Например, <a class="site_link-color_grey site_link" href="#"> выхожу один я на
+      дорогу</a>
+    </div>
+
+    <div class="search-logo site_first-letter_red">Яндекс</div>
+
+    <div class="advertising">
+      <img alt="App Gallery Advertising" class="advertising__image" src="images/ad.png">
+    </div>
+
+    <section class="sections">
+
+      <div class="sections__column">
+        <article class="topic visited">
+          <a class="topic__title site_link site_link-color_dark-blue site_font-size_l4" href="#">Посещаемое</a>
+          <ul class="sections__list">
+            <li><a class="site_link site_font_bold" href="#">Маркет</a> — китайская распродажа</li>
+            <li><a class="site_link site_font_bold" href="#">Авто.ру</a> — Туссан третьей серии</li>
+            <li><a class="site_link site_font_bold" href="#">Надвижимость</a> — продажа студии</li>
+            <li><a class="site_link site_font_bold" href="#">Работа</a> — охранником</li>
+            <li><a class="site_link site_font_bold" href="#">Здоровье</a> — врач на связи</li>
+            <li><a class="site_link site_font_bold" href="#">Коллекции</a> — как мелировать волосы
+            </li>
+            <li><a class="site_link site_font_bold" href="#">Авиабилеты</a> — из Екатиренбурга</li>
+          </ul>
+        </article>
+
+        <article class="topic best-jokes">
+          <a class="topic__title site_link site_link-color_dark-blue site_font-size_l4" href="#">
+            Лучшие анекдоты
+          </a>
+
+          <input id="show-more-1" name="show-more" type="radio">
+          <input id="show-more-2" name="show-more" type="radio">
+          <input id="show-more-3" name="show-more" type="radio">
+          <input id="show-more-4" name="show-more" type="radio">
+          <input checked id="show-more-5" name="show-more" type="radio">
+
+          <ul class="jokes">
+            <li>
+              <span class="jokes__category">Раздел: <a class="site_link site_link-color_dark-blue" href="#">Медицинские</a> .</span>
+              <div class="jokes__content">- Вас лечить хорошо или бесплатно?</div>
+              <label class="show-more-wrapper" for="show-more-1"><span class="show-more">Показать еще</span></label>
+            </li>
+            <li>
+              <span class="joke-category">Раздел: <a class="site_link site_link-color_dark-blue" href="#">Жизненные</a> .</span>
+              <div class="jokes__content">Большинство людей не могут даже представить, как далеко они могут зайти. Пока их туда не пошлют.</div>
+              <label class="show-more-wrapper" for="show-more-2"><span class="show-more">Показать еще</span></label>
+            </li>
+            <li>
+              <span class="joke-category">Раздел: <a class="site_link site_link-color_dark-blue" href="#">Медицинские</a> .</span>
+              <div class="jokes__content">
+                - Операция.
+                <br>
+                - Сестра, ножницы!
+                <br>
+                - Минуточку, я еще педикюр не закончила...
+              </div>
+              <label class="show-more-wrapper" for="show-more-3"><span class="show-more">Показать еще</span></label>
+            </li>
+            <li>
+              <span class="joke-category">Раздел: <a class="site_link site_link-color_dark-blue" href="#">Философия</a> .</span>
+              <div class="jokes__content">Если на первый взгляд все хорошо, то лучше им и ограничиться.</div>
+              <label class="show-more-wrapper" for="show-more-4"><span class="show-more">Показать еще</span></label>
+            </li>
+            <li>
+              <span class="joke-category">Раздел: <a class="site_link site_link-color_dark-blue" href="#">Тюремные</a> .</span>
+              <div class="jokes__content">
+                В тюрьме:
+                <br>
+                — Иванов! К тебе жена!
+                <br>
+                — Ну уж нет! В приговоре ничего такого не было!
+              </div>
+              <label class="show-more-wrapper" for="show-more-5"><span class="show-more">Показать еще</span></label>
+            </li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="sections__column">
+        <article class="topic tv-program">
+          <a class="topic__title tv-online site_link site_link-color_dark-blue site_font-size_l4"
+             href="#">Телепрограмма</a>
+          <ul class="sections__list">
+            <li>
+              <span class="tv-program__time">16:00</span>
+              <a class="tv-program__title site_link" href="#">Понять. Простить</a>
+              <a class="tv-program__channel site_link site_link-color_grey" href="#">41 домашний</a>
+            </li>
+            <li>
+              <span class="tv-program__time">16:30</span>
+              <a class="tv-program__title site_link" href="#">Место встречи</a>
+              <a class="tv-program__channel site_link site_link-color_grey" href="#">НТВ</a>
+            </li>
+            <li>
+              <span class="tv-program__time">16:30</span>
+              <a class="tv-program__title site_link" href="#">Детективы</a>
+              <a class="tv-program__channel site_link site_link-color_grey" href="#">Пятый канал</a>
+            </li>
+            <li>
+              <span class="tv-program__time">16:30</span>
+              <a class="tv-program__title site_link" href="#">Новости</a>
+              <a class="tv-program__channel site_link site_link-color_grey" href="#">РЕН ТВ</a>
+            </li>
+            <li>
+              <span class="tv-program__time">16:30</span>
+              <a class="tv-program__title site_link" href="#">Гадалка</a>
+              <a class="tv-program__channel site_link site_link-color_grey" href="#">ТВ-3</a>
+            </li>
+            <li>
+              <span class="tv-program__time">16:30</span>
+              <a class="tv-program__title site_link" href="#">Реальные пацаны</a>
+              <a class="tv-program__channel site_link site_link-color_grey" href="#">ТНТ</a>
+            </li>
+          </ul>
+        </article>
+
+        <article class="topic car-news">
+          <a class="topic__title site_link site_link-color_dark-blue site_font-size_l4" href="#">Автомобильные
+            новости</a>
+
+          <div class="shadows">
+            <div class="shadows__up"></div>
+            <div class="shadows__down"></div>
+          </div>
+
+          <ul class="car-news__list sections__list">
+            <li>
+              <a class="site_link" href="#">Грянет ли когда-нибудь пандемия? Вот что предсказала
+                Ванга</a>
+              <span class="site_font-color_grey site_font-size_l1">11:25</span>
+            </li>
+            <li>
+              <a class="site_link" href="#">Правительство поддержало законопроект о регистрации
+                машиномест</a>
+              <span class="site_font-color_grey site_font-size_l1">12:19</span>
+            </li>
+            <li>
+              <a class="site_link" href="#">Обзор нового Mitsubishi, за которым выстроилась
+                очередь</a>
+              <span class="site_font-color_grey site_font-size_l1">12:01</span>
+            </li>
+            <li>
+              <a class="site_link" href="#">"Лады оснастят системой управления со смартфона"</a>
+              <span class="site_font-color_grey site_font-size_l1">11:40</span>
+            </li>
+            <li>
+              <a class="site_link" href="#">В Китае представили спорткар с двигателем от Focus
+                RS</a>
+              <span class="site_font-color_grey site_font-size_l1">11:30</span>
+            </li>
+            <li>
+              <a class="site_link" href="#">Священник отчитал прихожан, а они заставили его продать
+                почку</a>
+              <span class="site_font-color_grey site_font-size_l1">12:11</span>
+            </li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="sections__column">
+        <article class="topic weather">
+          <div class="triple-header site_font-size_l4">
+            <a class="site_link site_link-color_dark-blue site_font-size_l4" href="#">Погода</a>
+            <img alt="Current weather = cloudy"
+                 class="weather-img"
+                 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='36'%20height='36'%3E%3Cdefs%3E%3CradialGradient%20cx='88.2%25'%20cy='11.31%25'%20fx='88.2%25'%20fy='11.31%25'%20r='51.28%25'%20gradientTransform='matrix(0%20-.975%201%200%20.77%20.97)'%20id='a'%3E%3Cstop%20stop-color='%239699C7'%20offset='0%25'/%3E%3Cstop%20stop-color='%239499C9'%20stop-opacity='0'%20offset='100%25'/%3E%3C/radialGradient%3E%3CradialGradient%20cx='8.17%25'%20cy='-6.53%25'%20fx='8.17%25'%20fy='-6.53%25'%20r='65.22%25'%20gradientTransform='matrix(0%20-.975%201%200%20.15%20.01)'%20id='b'%3E%3Cstop%20stop-color='%239699C7'%20offset='0%25'/%3E%3Cstop%20stop-color='%239499C9'%20stop-opacity='0'%20offset='100%25'/%3E%3C/radialGradient%3E%3ClinearGradient%20x1='50%25'%20y1='0%25'%20x2='50%25'%20y2='100%25'%20id='c'%3E%3Cstop%20stop-color='%23A4C5F4'%20offset='0%25'/%3E%3Cstop%20stop-color='%23A7C7F2'%20offset='100%25'/%3E%3C/linearGradient%3E%3CradialGradient%20cx='88.2%25'%20cy='9.46%25'%20fx='88.2%25'%20fy='9.46%25'%20r='49.38%25'%20gradientTransform='matrix(0%20-.975%201%200%20.79%20.95)'%20id='d'%3E%3Cstop%20stop-color='%23486DA8'%20offset='0%25'/%3E%3Cstop%20stop-color='%23486DA8'%20stop-opacity='0'%20offset='100%25'/%3E%3C/radialGradient%3E%3CradialGradient%20cx='14.44%25'%20cy='0%25'%20fx='14.44%25'%20fy='0%25'%20r='51.28%25'%20gradientTransform='matrix(0%20-.975%201%200%20.14%20.14)'%20id='e'%3E%3Cstop%20stop-color='%23486DA8'%20offset='0%25'/%3E%3Cstop%20stop-color='%23486DA8'%20stop-opacity='0'%20offset='100%25'/%3E%3C/radialGradient%3E%3ClinearGradient%20x1='50%25'%20y1='0%25'%20x2='50%25'%20y2='122.37%25'%20id='f'%3E%3Cstop%20stop-color='%23A4C5F4'%20offset='0%25'/%3E%3Cstop%20stop-color='%23A7C7F2'%20offset='100%25'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg%20fill='none'%20fill-rule='evenodd'%3E%3Cpath%20d='M29.07%2021.55a4.29%204.29%200%201%200-.04-8.57%205.71%205.71%200%200%200-11.07-2.59%205.71%205.71%200%201%200-1.75%2011.16h12.86z'%20fill='%2373A5E6'%20opacity='.32'/%3E%3Cg%20transform='translate(3%2010.55)'%3E%3Cellipse%20fill='url(%23a)'%20opacity='.2'%20cx='7.5'%20cy='12.31'%20rx='6'%20ry='6.15'/%3E%3Cellipse%20fill='url(%23b)'%20opacity='.2'%20cx='23.25'%20cy='14.62'%20rx='3.75'%20ry='3.85'/%3E%3Cpath%20d='M7.5%2018.46c-3.31%200-6-2.75-6-6.15%200-3.4%202.69-6.16%206-6.16a6%206%200%200%201%201.8.28%206.78%206.78%200%200%201%206.45-4.9%206.84%206.84%200%200%201%206.67%208%204.4%204.4%200%200%201%201.58-.3c2.49%200%204.5%202.07%204.5%204.62a4.56%204.56%200%200%201-4.5%204.61H7.5z'%20fill='url(%23c)'/%3E%3Cellipse%20fill='url(%23d)'%20opacity='.34'%20cx='7.5'%20cy='12.31'%20rx='6'%20ry='6.15'/%3E%3Cellipse%20fill='url(%23e)'%20opacity='.2'%20cx='24'%20cy='13.85'%20rx='4.5'%20ry='4.62'/%3E%3Cellipse%20fill='url(%23f)'%20cx='15.75'%20cy='8.46'%20rx='6.75'%20ry='6.92'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E">
+            <span class="weather__current-temperature">-3°C</span>
+          </div>
+          Вечер -5, ночь -7
+        </article>
+
+        <article class="topic traffic-jams">
+          <div class="triple-header site_font-size_l4">
+            <a class="site_link site_link-color_dark-blue site_font-size_l4" href="#">Пробки</a>
+            <img alt="Green traffic light"
+                 class="stoplight-img"
+                 src="https://yastatic.net/s3/home-static/_/W/6/3iKv0HwMyq3LM_iMXrpDbLZkM.svg">
+            <span class="traffic-jams__value">4 балла</span>
+          </div>
+          Местами затруднение
+        </article>
+
+        <article class="topic map">
+          <a class="topic__title site_link site_link-color_dark-blue site_font-size_l4" href="#">Карта Екатиренбурга</a>
+          <ul class="map__list site_font_bold">
+            <li><a class="site_link" href="#">Такси</a></li>
+            <li><a class="site_link" href="#">Расписания</a></li>
+            <li><a class="site_link" href="#">Международные автобусы</a></li>
+          </ul>
+        </article>
+
+        <article class="topic poster">
+          <a class="topic__title site_link site_link-color_dark-blue site_font-size_l4" href="#">Афиша</a>
+          <ul class="sections__list list-element-margin_big">
+            <li>
+              <a class="site_link" href="#">Субурбикон</a>
+              <a class="poster__info site_link-color_grey site_link" href="#">премьера в чт</a>
+            </li>
+            <li>
+              <a class="site_link" href="#">Последний богатырь</a>
+              <a class="poster__info site_link-color_grey site_link" href="#">приключения</a>
+            </li>
+            <li>
+              <a class="site_link" href="#">Фиксики: Большой секрет</a>
+              <a class="poster__info site_link-color_grey site_link" href="#">мульфильмы</a>
+            </li>
+            <li>
+              <a class="site_link" href="#">Тор: Рагнарек</a>
+              <a class="poster__info site_link-color_grey site_link" href="#">фэнтези</a>
+            </li>
+            <li><a class="site_link" href="#">Убийство в Восточном...</a>
+              <a class="poster__info site_link-color_grey site_link" href="#">драма</a>
+            </li>
+            <li>
+              <a class="site_link site_font_bold" href="#">Концерты — Brainstorm</a>
+            </li>
+          </ul>
+
+        </article>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>

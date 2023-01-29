@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Мурмаркет v2.0</title>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__h1">Мурмаркет</div>
+    </header>
+
+    <input id="cat1" name="cats" type="radio" value="cat1" checked>
+    <input id="cat2" name="cats" type="radio" value="cat2">
+    <input id="cat3" name="cats" type="radio" value="cat3">
+    <input id="cat4" name="cats" type="radio" value="cat4">
+    <input id="cat5" name="cats" type="radio" value="cat5">
+    <input id="cat6" name="cats" type="radio" value="cat6">
+
+    <div id="dummy"></div>
+
+    <main>
+      <ul class="carousel">
+
+        <li>
+          <label class="cat-label" for="cat1">
+            <a href="#full-cat1" class="a-name">
+              <span class="cat-name">Василий</span>
+            </a>
+            <img class="cat-img" src="images/cats/cat-1.jpg" alt="cat1-vasilii">
+          </label>
+
+          <div class="cat-data-wrapper" id="full-cat1">
+            <div class="cat-data">
+              <img src="images/cats/cat-1.jpg" alt="cat1-vasilii">
+              <div class="cat-info">
+                <div class="cat-info__name">Василий</div>
+                <div class="cat-info__traits">Умный дерзкий</div>
+                <div class="cat-info__age">Возраст: 3 года</div>
+                <div class="cat-info__desc">Не подходи, оно тебя сожрет!</div>
+              </div>
+              <a href="#dummy" class="close"></a>
+            </div>
+          </div>
+
+        </li>
+
+        <li>
+          <label class="cat-label" for="cat2">
+            <a href="#full-cat2" class="a-name">
+              <span class="cat-name">Хмурыш</span>
+            </a>
+            <img class="cat-img" src="images/cats/cat-2.png" alt="cat2-hmurysh">
+          </label>
+
+          <div class="cat-data-wrapper" id="full-cat2">
+            <div class="cat-data">
+              <img src="images/cats/cat-2.png" alt="cat2-hmurysh">
+              <div class="cat-info">
+                <div class="cat-info__name">Хмурыш</div>
+                <div class="cat-info__traits">Красивый, хмурый</div>
+                <div class="cat-info__age">Возраст: бессмертный</div>
+                <div class="cat-info__desc">
+                  Как назвали - такой и есть. Наверное, веселый где-то глубоко, в глубине души...
+                </div>
+              </div>
+              <a href="#dummy" class="close"></a>
+            </div>
+          </div>
+
+        </li>
+
+        <li>
+          <label class="cat-label" for="cat3">
+            <a href="#full-cat3" class="a-name">
+              <span class="cat-name">Барон</span>
+            </a>
+            <img class="cat-img" src="images/cats/cat-3.jpg" alt="cat3-baron">
+          </label>
+
+          <div class="cat-data-wrapper" id="full-cat3">
+            <div class="cat-data">
+              <img src="images/cats/cat-3.jpg" alt="cat3-baron">
+              <div class="cat-info">
+                <div class="cat-info__name">Барон</div>
+                <div class="cat-info__traits">Милый, ленивый</div>
+                <div class="cat-info__age">Возраст: 5 лет</div>
+                <div class="cat-info__desc">
+                  Любит детей, собак, а еще спать с открытыми глазами. Никого не пропустит!
+                </div>
+              </div>
+              <a href="#dummy" class="close"></a>
+            </div>
+          </div>
+
+        </li>
+
+        <li>
+          <label class="cat-label" for="cat4">
+            <a href="#full-cat4" class="a-name">
+              <span class="cat-name">Рыжик</span>
+            </a>
+            <img class="cat-img" src="images/cats/cat-4.png" alt="cat4-ryzhik">
+          </label>
+
+          <div class="cat-data-wrapper" id="full-cat4">
+            <div class="cat-data">
+              <img src="images/cats/cat-4.png" alt="cat4-ryzhik">
+              <div class="cat-info">
+                <div class="cat-info__name">Рыжик</div>
+                <div class="cat-info__traits">Странный, добрый, холост</div>
+                <div class="cat-info__age">Возраст: 3 месяца</div>
+                <div class="cat-info__desc">Просто хороший малый</div>
+              </div>
+              <a href="#dummy" class="close"></a>
+            </div>
+          </div>
+
+        </li>
+
+        <li>
+          <label class="cat-label" for="cat5">
+            <a href="#full-cat5" class="a-name">
+              <span class="cat-name">Полковник</span>
+            </a>
+            <img class="cat-img" src="images/cats/cat-5.jpg" alt="cat5-polkovnik">
+          </label>
+
+          <div class="cat-data-wrapper" id="full-cat5">
+            <div class="cat-data">
+              <img src="images/cats/cat-5.jpg" alt="cat5-polkovnik">
+              <div class="cat-info">
+                <div class="cat-info__name">Полковник</div>
+                <div class="cat-info__traits">Суров, силен, сворлив</div>
+                <div class="cat-info__age">Возраст: никто не знает</div>
+                <div class="cat-info__desc">Настоящий код прагматик</div>
+              </div>
+              <a href="#dummy" class="close"></a>
+            </div>
+          </div>
+
+        </li>
+
+        <li>
+          <label class="cat-label" for="cat6">
+            <a href="#full-cat6" class="a-name">
+              <span class="cat-name">Киса</span>
+            </a>
+            <img class="cat-img" src="images/cats/cat-6.png" alt="cat6-kisa">
+          </label>
+
+          <div class="cat-data-wrapper" id="full-cat6">
+            <div class="cat-data">
+              <img src="images/cats/cat-6.png" alt="cat6-kisa">
+              <div class="cat-info">
+                <div class="cat-info__name">Киса</div>
+                <div class="cat-info__traits">Стерва, стерва, стерва...</div>
+                <div class="cat-info__age">Возраст: скрывает информацию</div>
+                <div class="cat-info__desc">Стерва, стерва, стерва...</div>
+              </div>
+              <a href="#dummy" class="close"></a>
+            </div>
+          </div>
+
+        </li>
+
+      </ul>
+    </main>
+
+    <footer class="footer">
+      <span class="footer__links-title">Не пишите нам:</span>
+      <ul class="footer__links">
+        <li><a href='mailto:cats@babuli.ru'>cats@babuli.ru</a></li>
+        <li><a href='mailto:vnuchek@babuli.ru'>vnuchek@babuli.ru</a></li>
+      </ul>
+      <span class="footer__copy">&copy; 2021 ООО "<a href='#'>Бабушкины котятки</a>"</span>
+    </footer>
+  </body>
+</html>
