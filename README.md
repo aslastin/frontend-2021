@@ -8,13 +8,13 @@
 
 ### HW
 
-1. [Модель отображения: Про котиков](layout/01-about-cats/src/index.html)
-1. [Модель отображения: Мурмаркет](layout/02-cats-carousel/src/index.html)
-1. [Layout: Котики для всех](layout/03-cats-for-all/src/index.html)
-1. [Touch: 2DTinder (mobile only)](layout/04-2d-tinder/src/index.html)
-1. [Доступность: Девушка Мечты](layout/05-form/src/index.html)
-1. [Шрифты: Газета "КТ.Ньюс"](layout/06-newspaper/src/index.html)
-1. [Браузер: Морда](layout/07-morda/src/index.html)
+1. [Модель отображения: Про котиков](https://htmlpreview.github.io/?https://github.com/aslastin/frontend-2021/blob/main/layout/01-about-cats/src/index.html)
+1. [Модель отображения: Мурмаркет](https://htmlpreview.github.io/?https://github.com/aslastin/frontend-2021/blob/main/layout/02-cats-carousel/src/index.html)
+1. [Layout: Котики для всех](https://htmlpreview.github.io/?https://github.com/aslastin/frontend-2021/blob/main/layout/03-cats-for-all/src/index.html)
+1. [Touch: 2DTinder](https://htmlpreview.github.io/?https://github.com/aslastin/frontend-2021/blob/main/layout/04-2d-tinder/src/index.html) (mobile only)
+1. [Доступность: Девушка Мечты](https://htmlpreview.github.io/?https://github.com/aslastin/frontend-2021/blob/main/layout/05-form/src/index.html)
+1. [Шрифты: Газета "КТ.Ньюс"](https://htmlpreview.github.io/?https://github.com/aslastin/frontend-2021/blob/main/layout/06-newspaper/src/index.html)
+1. [Браузер: Морда](https://htmlpreview.github.io/?https://github.com/aslastin/frontend-2021/blob/main/layout/07-morda/src/index.html)
 
 ## JavaScript
 
